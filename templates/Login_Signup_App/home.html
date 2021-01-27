@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+        <p>loged in as {{user.username}} </p>
+        <form action="{% url 'logout' %}">
+            <input type="submit" value="Logout">
+        </form>
+    {% else %}
+        <p>No one is loged in</p>
+        <form action="{% url 'login' %}"><input type="submit" value="Login"></form>
+        <form action="{% url 'signup' %}"><input type="submit" value="Signup"></form>
+    {% endif %}
+
+{% endblock content %}
