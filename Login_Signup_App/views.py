@@ -22,7 +22,7 @@ def Signup(request):
                 return render(request, 'Login_Signup_App/signup.html', {'form': SignupForm(), 'error':'user name already exists'})
         else:
             return render(request, 'Login_Signup_App/signup.html', {'form': SignupForm(), 'error':'check password'})
-        
+
 
 def loginUser(request):
     if request.method == 'GET':
